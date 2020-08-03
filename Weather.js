@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import PropTypes from "prop-types";
 
-function Weather() {
+function Weather({ weatherName, temp }) {
+    console.log(weatherName);
     return (
         <LinearGradient style={styles.container} colors={["#00C6F8", "#005BEA"]}>
             <View style={styles.upper}>
-                <MaterialCommunityIcons color="white" size={144} name="Rain.icon" />
+                <MaterialCommunityIcons color="white" size={144} name="Rain" />
                 <Text style={styles.temp}>35°C</Text>
             </View>
             <View style={styles.lower}>
@@ -17,6 +19,11 @@ function Weather() {
         </LinearGradient>
     );
 }
+
+Weather.propTypes = {
+    temp: PropTypes.number.isRequired,
+    weatherName: PropTypes.string.isRequired,
+};
 
 export default Weather;
 
