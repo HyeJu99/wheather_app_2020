@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -50,7 +50,6 @@ const weatherCases = {
 };
 
 function Weather({ weatherName, temp }) {
-    //console.log(weatherName);
     return (
         <LinearGradient colors={weatherCases[weatherName].colors} style={styles.container}>
             <View style={styles.upper}>
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 38,
-        backgroundColor: "transparent", //배경을 투명하게
+        backgroundColor: "transparent",
         color: "white",
         marginBottom: 24,
         fontWeight: "300",

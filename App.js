@@ -29,7 +29,6 @@ export default class App extends Component {
         )
             .then((response) => response.json())
             .then((json) => {
-                //console.log(json);
                 this.setState({
                     temperature: json.main.temp,
                     name: json.weather[0].main,
