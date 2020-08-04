@@ -1,5 +1,5 @@
 # weather_app_2020
-리액트 네이티브로 날씨앱 만들기 with expo
+리액트 네이티브로 날씨앱 만들기 with weather API, expo
 
 -학기 중에 따라해본 거지만, 뒤늦게 올리기..
 
