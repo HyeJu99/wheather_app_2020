@@ -4,17 +4,66 @@ import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
 
+const weatherCases = {
+    Rain: {
+        colors: ["#00C6F8", "#005BEA"],
+        title: "It's Raining",
+        subtitle: "For more info look outside!",
+        icon: "weather-rainy",
+    },
+    Clear: {
+        colors: ["#FEF253", "#FF7300"],
+        title: "It's Clear :)",
+        subtitle: "Go get your add burnt!",
+        icon: "weather-sunny",
+    },
+    Thundersrorm: {
+        colors: ["#00ECBC", "#007ADF"],
+        title: "Thunderstorm in the house",
+        subtitle: "Actually, outside of the house!",
+        icon: "weather-lightning",
+    },
+    Clouds: {
+        colors: ["#D7D0C0", "#304352"],
+        title: "Cloud",
+        subtitle: "Cloud Day!",
+        icon: "weather-cloudy",
+    },
+    Snow: {
+        colors: ["#7DE2FC", "#B9B620"],
+        title: "Snow",
+        subtitle: "Do you want to build the snowman",
+        icon: "weather-snowy",
+    },
+    Drizzle: {
+        colors: ["#89F7FE", "#66A6FF"],
+        title: "Drizzle",
+        subtitle: "No Rain, It's Drizzle!",
+        icon: "weather-hail",
+    },
+    Mist: {
+        colors: ["#89F7FE", "#66A6FF"],
+        title: "Mist",
+        subtitle: "No Rain, It's Mist!",
+        icon: "weather-hail",
+    },
+};
+
 function Weather({ weatherName, temp }) {
-    console.log(weatherName);
+    //console.log(weatherName);
     return (
-        <LinearGradient style={styles.container} colors={["#00C6F8", "#005BEA"]}>
+        <LinearGradient colors={weatherCases[weatherName].colors} style={styles.container}>
             <View style={styles.upper}>
-                <MaterialCommunityIcons color="white" size={144} name="Rain" />
-                <Text style={styles.temp}>35°C</Text>
+                <MaterialCommunityIcons
+                    color="white"
+                    size={144}
+                    name={weatherCases[weatherName].icon}
+                />
+                <Text style={styles.temp}>{temp}°C</Text>
             </View>
             <View style={styles.lower}>
-                <Text style={styles.title}>Raining</Text>
-                <Text style={styles.subtitle}>for more info look outside</Text>
+                <Text style={styles.title}>{weatherCases[weatherName].title}</Text>
+                <Text style={styles.subtitle}>{weatherCases[weatherName].subtitle}</Text>
             </View>
         </LinearGradient>
     );
